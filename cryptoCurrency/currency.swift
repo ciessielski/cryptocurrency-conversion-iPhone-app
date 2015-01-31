@@ -23,6 +23,12 @@ class currency
     {
         self.slug = slug
     }
+    
+    init(slug: String, value: Double)
+    {
+        self.slug = slug
+        self.value = value
+    }
 
 
 }

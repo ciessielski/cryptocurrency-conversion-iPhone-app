@@ -32,12 +32,12 @@ class valueTable
     
     init()
     {
-        currencies.append(currency(slug: "USD"))
-        currencies.append(currency(slug: "EUR"))
-        currencies.append(currency(slug: "PLN"))
-        currencies.append(currency(slug: "BTC"))
+        currencies.append(currency(slug: "USD", value: 1.0))
+        currencies.append(currency(slug: "EUR", value: 1.128))
+        currencies.append(currency(slug: "PLN", value: 0.269))
+        currencies.append(currency(slug: "BTC", value: 0.00458439))
         currencies.append(currency(slug: "XRP"))
-        currencies.append(currency(slug: "LTC"))
+        currencies.append(currency(slug: "LTC", value: 0.53536))
         currencies.append(currency(slug: "BTS"))
         currencies.append(currency(slug: "XPY"))
         currencies.append(currency(slug: "STR"))

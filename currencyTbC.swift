@@ -13,6 +13,7 @@ class currencyTbC: UITableViewCell {
     
     @IBOutlet weak var currencyImage: UIImageView!
     @IBOutlet weak var currencyShort: UILabel!
+    @IBOutlet weak var currencyAmount: UILabel!
     
     
     override func awakeFromNib() {

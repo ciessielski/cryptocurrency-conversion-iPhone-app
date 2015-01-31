@@ -11,10 +11,16 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
+    @IBOutlet weak var amountField: UITextField!
     @IBOutlet var tableView: UITableView!
    
     var currTable = valueTable()
     
+    @IBAction func donePressed(sender: AnyObject) {
+        
+        amountField.resignFirstResponder()
+        self.tableView.reloadData()
+    }
     
   
     override func viewDidLoad()
@@ -47,6 +53,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.currencyImage?.image = UIImage(named:"bitcoin")
         cell.currencyShort?.text = currTable.currencies[indexPath.row].slug
         
+        if let cost = currTable.currencies[indexPath.row].value
+        {
+            var costt = (amountField.text as NSString).doubleValue / cost
+
+            cell.currencyAmount.text = "\(costt)"
+        }
+        else {cell.currencyAmount.text = amountField.text}
         
         return cell
         
