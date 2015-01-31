@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F9CCCAD1A7D35EF00BF4977 /* currencyTbC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CCCAC1A7D35EE00BF4977 /* currencyTbC.swift */; };
+		9F9CCCB21A7D79BD00BF4977 /* currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CCCB11A7D79BD00BF4977 /* currency.swift */; };
+		9F9CCCB41A7D7DE900BF4977 /* valueTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CCCB31A7D7DE900BF4977 /* valueTable.swift */; };
+		9FB2810F1A7D32E900E3E45A /* currencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB2810E1A7D32E900E3E45A /* currencyCell.xib */; };
 		9FFE6DCF1A7D0B66002A6CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE6DCE1A7D0B66002A6CBF /* AppDelegate.swift */; };
 		9FFE6DD11A7D0B66002A6CBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE6DD01A7D0B66002A6CBF /* ViewController.swift */; };
 		9FFE6DD41A7D0B66002A6CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFE6DD21A7D0B66002A6CBF /* Main.storyboard */; };
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F9CCCAC1A7D35EE00BF4977 /* currencyTbC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = currencyTbC.swift; path = ../currencyTbC.swift; sourceTree = "<group>"; };
+		9F9CCCB11A7D79BD00BF4977 /* currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currency.swift; sourceTree = "<group>"; };
+		9F9CCCB31A7D7DE900BF4977 /* valueTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = valueTable.swift; sourceTree = "<group>"; };
+		9FB2810E1A7D32E900E3E45A /* currencyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = currencyCell.xib; sourceTree = "<group>"; };
 		9FFE6DC91A7D0B65002A6CBF /* cryptoCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFE6DCD1A7D0B66002A6CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FFE6DCE1A7D0B66002A6CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +64,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F9CCCAE1A7D4CF400BF4977 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F9CCCAC1A7D35EE00BF4977 /* currencyTbC.swift */,
+				9FB2810E1A7D32E900E3E45A /* currencyCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		9F9CCCB51A7D7DF300BF4977 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F9CCCB11A7D79BD00BF4977 /* currency.swift */,
+				9F9CCCB31A7D7DE900BF4977 /* valueTable.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9FFE6DC01A7D0B65002A6CBF = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +103,10 @@
 		9FFE6DCB1A7D0B65002A6CBF /* cryptoCurrency */ = {
 			isa = PBXGroup;
 			children = (
-				9FFE6DCE1A7D0B66002A6CBF /* AppDelegate.swift */,
 				9FFE6DD01A7D0B66002A6CBF /* ViewController.swift */,
 				9FFE6DD21A7D0B66002A6CBF /* Main.storyboard */,
-				9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */,
-				9FFE6DD71A7D0B66002A6CBF /* LaunchScreen.xib */,
+				9F9CCCB51A7D7DF300BF4977 /* Model */,
+				9F9CCCAE1A7D4CF400BF4977 /* Cell */,
 				9FFE6DCC1A7D0B66002A6CBF /* Supporting Files */,
 			);
 			path = cryptoCurrency;
@@ -90,6 +115,9 @@
 		9FFE6DCC1A7D0B66002A6CBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9FFE6DCE1A7D0B66002A6CBF /* AppDelegate.swift */,
+				9FFE6DD71A7D0B66002A6CBF /* LaunchScreen.xib */,
+				9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */,
 				9FFE6DCD1A7D0B66002A6CBF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FFE6DD41A7D0B66002A6CBF /* Main.storyboard in Resources */,
+				9FB2810F1A7D32E900E3E45A /* currencyCell.xib in Resources */,
 				9FFE6DD91A7D0B66002A6CBF /* LaunchScreen.xib in Resources */,
 				9FFE6DD61A7D0B66002A6CBF /* Images.xcassets in Resources */,
 			);
@@ -212,7 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9CCCB21A7D79BD00BF4977 /* currency.swift in Sources */,
 				9FFE6DD11A7D0B66002A6CBF /* ViewController.swift in Sources */,
+				9F9CCCB41A7D7DE900BF4977 /* valueTable.swift in Sources */,
+				9F9CCCAD1A7D35EF00BF4977 /* currencyTbC.swift in Sources */,
 				9FFE6DCF1A7D0B66002A6CBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +437,7 @@
 				9FFE6DEA1A7D0B66002A6CBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FFE6DEB1A7D0B66002A6CBF /* Build configuration list for PBXNativeTarget "cryptoCurrencyTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +446,7 @@
 				9FFE6DED1A7D0B66002A6CBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
