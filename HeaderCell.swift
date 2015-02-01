@@ -2,7 +2,7 @@
 //  HeaderCell.swift
 //  cryptoCurrency
 //
-//  Created by Pumpkin K on 01.02.2015.
+//  Created by Paweł Charatonik on 01.02.2015.
 //  Copyright (c) 2015 charatonik. All rights reserved.
 //
 

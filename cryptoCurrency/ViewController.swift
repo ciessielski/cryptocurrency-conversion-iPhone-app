@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+
         //Register custom cell
         var nib = UINib(nibName:"currencyCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
@@ -75,10 +75,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let cost = currTable.currencies[indexPath.row].value
             {
                 var costt = (amountField.text as NSString).doubleValue * cost
-                cell.currencyAmount.text = "\(costt)"
+                cell.currencyAmount.text = String(format: "%.2f", costt)
             }
             else {cell.currencyAmount.text = amountField.text}
             
+            
+            if let im = currTable.currencies[indexPath.row].image
+            {
+                cell.currencyImage.image = im
+            }
             return cell
             
         case 1:
@@ -86,18 +91,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let cost = currTable.cryptoCurrencies[indexPath.row].value
             {
                 var costt = (amountField.text as NSString).doubleValue * cost
-                cell.currencyAmount.text = "\(costt)"
+                cell.currencyAmount.text = String(format: "%.2f", costt)
             }
             else {cell.currencyAmount.text = amountField.text}
             
+            if let im = currTable.cryptoCurrencies[indexPath.row].image
+            {
+                cell.currencyImage.image = im
+            }
+            else {
+            }
+        
             return cell
+
             
         default: return cell
             
         }
         
         
-        //cell.currencyImage?.image = UIImage(named:"bitcoin")
+        
 
         
     }
@@ -105,14 +118,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as HeaderCell
-        //headerCell.backgroundColor = UIColor.cyanColor()
         
         switch (section) {
         case 0:
-            headerCell.headerLabel.text = "fiat currencies";
+            headerCell.headerLabel.text = "FIAT CURRENCIES";
             //return sectionHeaderView
         case 1:
-            headerCell.headerLabel.text = "crypto currencies";
+            headerCell.headerLabel.text = "CRYPTOCURRENCIES";
 
         default:
             headerCell.headerLabel.text = "Other";
@@ -131,8 +143,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if editingStyle == .Delete
         {
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            currTable.currencies.removeAtIndex(indexPath.row)
+            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            // currTable.currencies.removeAtIndex(indexPath.row)
             // The delete button doas show up but it aint work.. yet
         }
     }

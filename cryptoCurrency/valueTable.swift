@@ -2,16 +2,17 @@
 //  valueTable.swift
 //  cryptoCurrency
 //
-//  Created by Pumpkin K on 31.01.2015.
+//  Created by Paweł Charatonik on 31.01.2015.
 //  Copyright (c) 2015 charatonik. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
 var currencyDictionary =
     [ "USD"     : "Dollar"
     , "EUR"     : "Euro"
-    , "PLN"     : "Złoty"
+    , "GBP"     : "Pound"
     , "BTC"     : "Bitcoin"
     , "XRP"     : "Ripple"
     , "LTC"     : "Litecoin"
@@ -19,7 +20,7 @@ var currencyDictionary =
     , "XPY"     : "PayCoin"
     , "STR"     : "Stellar"
     , "DOGE"    : "DogeCoin"
-    , "MAID"    : "MaidSaveCoin"
+    , "MAID"    : "MaidSafeCoin"
     , "NXT"     : "Nxt"
     , "DRK"     : "Darkcoin"]
 
@@ -34,7 +35,7 @@ class valueTable
     {
         currencies.append(currency(slug: "USD", value: 1.0))
         currencies.append(currency(slug: "EUR", value: 0.886))
-        currencies.append(currency(slug: "PLN", value: 3.707))
+        currencies.append(currency(slug: "GBP", value: 0.66))
         
         
         cryptoCurrencies.append(currency(slug: "BTC", value: 0.00458439))
@@ -56,6 +57,14 @@ class valueTable
         for curr in currencies
         {
             curr.name = currencyDictionary[curr.slug]
+            curr.image = UIImage(named: curr.name!)
+        }
+        
+        
+        for curr in cryptoCurrencies
+        {
+            curr.name = currencyDictionary[curr.slug]
+            curr.image = UIImage(named: curr.name!)
         }
     }
     

@@ -12,9 +12,9 @@ class currencyTbC: UITableViewCell {
 
     
 
-    @IBOutlet weak var currencyImage: UIButton!
     @IBOutlet weak var currencyShort: UILabel!
     @IBOutlet weak var currencyAmount: UILabel!
+    @IBOutlet weak var currencyImage: UIImageView!
     
     @IBAction func currencyButtonPressed(sender: AnyObject)
     

@@ -15,12 +15,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgP-yN-Zpt">
-                        <rect key="frame" x="68" y="28" width="64" height="21"/>
+                        <rect key="frame" x="68" y="26" width="64" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="64" id="J3Q-aD-Gqn"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-lh-Gcc">
@@ -28,7 +28,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="51" id="QYl-Zc-eJ7"/>
                         </constraints>
-                        <state key="normal" backgroundImage="bitcoin">
+                        <state key="normal">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
@@ -36,21 +36,25 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123,43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zw-7z-Kfd">
-                        <rect key="frame" x="259" y="26" width="53" height="21"/>
+                        <rect key="frame" x="221" y="26" width="91" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-Yx-7LD">
+                        <rect key="frame" x="8" y="11" width="52" height="51"/>
+                    </imageView>
                 </subviews>
-                <color key="backgroundColor" red="0.31071428569999998" green="0.56023995540000004" blue="0.47013113839999998" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="20" id="7tR-wh-Hyf"/>
+                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="18" id="7tR-wh-Hyf"/>
                     <constraint firstItem="xMf-lh-Gcc" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leadingMargin" id="F6Q-KJ-sPU"/>
-                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="leading" secondItem="pgP-yN-Zpt" secondAttribute="trailing" constant="127" id="JlQ-Ox-24R"/>
+                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="leading" secondItem="pgP-yN-Zpt" secondAttribute="trailing" constant="89" id="JlQ-Ox-24R"/>
+                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="trailing" secondItem="ApN-o5-bGI" secondAttribute="trailingMargin" id="OjQ-X2-uc5"/>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="8" symbolic="YES" id="bYO-2i-7OI"/>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leading" constant="68" id="dFq-Kk-cDp"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="252" id="dPJ-nQ-EOi"/>
-                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="baseline" secondItem="1zw-7z-Kfd" secondAttribute="baseline" constant="2" id="mHM-UC-fkT"/>
+                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="baseline" secondItem="1zw-7z-Kfd" secondAttribute="baseline" id="mHM-UC-fkT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xMf-lh-Gcc" secondAttribute="bottom" constant="1" id="nF7-1U-G5Q"/>
                     <constraint firstItem="xMf-lh-Gcc" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="3" id="pQZ-Qm-q7g"/>
                     <constraint firstAttribute="centerX" secondItem="xMf-lh-Gcc" secondAttribute="centerX" constant="126" id="sNh-bC-K9d"/>
@@ -59,13 +63,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="currencyAmount" destination="1zw-7z-Kfd" id="Yt5-An-r4L"/>
-                <outlet property="currencyImage" destination="xMf-lh-Gcc" id="S2e-zF-huR"/>
+                <outlet property="currencyImage" destination="HCp-Yx-7LD" id="8sR-mR-o6H"/>
                 <outlet property="currencyShort" destination="pgP-yN-Zpt" id="ZA0-cv-Nfg"/>
             </connections>
-            <point key="canvasLocation" x="462" y="355"/>
+            <point key="canvasLocation" x="462" y="352"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="bitcoin" width="500" height="500"/>
-    </resources>
 </document>
