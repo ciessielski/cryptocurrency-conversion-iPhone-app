@@ -34,20 +34,20 @@ class valueTable
     init()
     {
         currencies.append(currency(slug: "USD", value: 1.0))
-        currencies.append(currency(slug: "EUR", value: 0.886))
-        currencies.append(currency(slug: "GBP", value: 0.66))
+        currencies.append(currency(slug: "EUR", value: 1.13))
+        currencies.append(currency(slug: "GBP", value: 1.51))
         
         
-        cryptoCurrencies.append(currency(slug: "BTC", value: 0.00458439))
-        cryptoCurrencies.append(currency(slug: "XRP"))
-        cryptoCurrencies.append(currency(slug: "LTC", value: 0.53536))
-        cryptoCurrencies.append(currency(slug: "BTS"))
-        cryptoCurrencies.append(currency(slug: "XPY"))
-        cryptoCurrencies.append(currency(slug: "STR"))
-        cryptoCurrencies.append(currency(slug: "DOGE"))
-        cryptoCurrencies.append(currency(slug: "MAID"))
-        cryptoCurrencies.append(currency(slug: "NXT"))
-        cryptoCurrencies.append(currency(slug: "DRK"))
+        cryptoCurrencies.append(currency(slug: "BTC", value:219.13 ))
+        cryptoCurrencies.append(currency(slug: "XRP", value:0.0138))
+        cryptoCurrencies.append(currency(slug: "LTC", value: 1.75))
+        cryptoCurrencies.append(currency(slug: "BTS", value:0.010232))
+        cryptoCurrencies.append(currency(slug: "XPY", value:1.79))
+        cryptoCurrencies.append(currency(slug: "STR", value:0.004099))
+        cryptoCurrencies.append(currency(slug: "DOGE", value:0.000139))
+        cryptoCurrencies.append(currency(slug: "MAID", value:0.030681))
+        cryptoCurrencies.append(currency(slug: "NXT", value:0.011446))
+        cryptoCurrencies.append(currency(slug: "DRK", value:1.70))
         assignAttributes()
     }
     

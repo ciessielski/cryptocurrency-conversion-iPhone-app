@@ -36,9 +36,9 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123,43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zw-7z-Kfd">
-                        <rect key="frame" x="221" y="26" width="91" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="221" y="27" width="91" height="20"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                        <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-Yx-7LD">
@@ -54,7 +54,7 @@
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="8" symbolic="YES" id="bYO-2i-7OI"/>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leading" constant="68" id="dFq-Kk-cDp"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="252" id="dPJ-nQ-EOi"/>
-                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="baseline" secondItem="1zw-7z-Kfd" secondAttribute="baseline" id="mHM-UC-fkT"/>
+                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="baseline" secondItem="1zw-7z-Kfd" secondAttribute="baseline" constant="-1" id="mHM-UC-fkT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xMf-lh-Gcc" secondAttribute="bottom" constant="1" id="nF7-1U-G5Q"/>
                     <constraint firstItem="xMf-lh-Gcc" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="3" id="pQZ-Qm-q7g"/>
                     <constraint firstAttribute="centerX" secondItem="xMf-lh-Gcc" secondAttribute="centerX" constant="126" id="sNh-bC-K9d"/>

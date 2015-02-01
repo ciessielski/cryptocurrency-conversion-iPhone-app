@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if let cost = currTable.currencies[indexPath.row].value
             {
-                var costt = (amountField.text as NSString).doubleValue * cost
+                var costt = (amountField.text as NSString).doubleValue / cost
                 cell.currencyAmount.text = String(format: "%.2f", costt)
             }
             else {cell.currencyAmount.text = amountField.text}
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug
             if let cost = currTable.cryptoCurrencies[indexPath.row].value
             {
-                var costt = (amountField.text as NSString).doubleValue * cost
+                var costt = (amountField.text as NSString).doubleValue / cost
                 cell.currencyAmount.text = String(format: "%.2f", costt)
             }
             else {cell.currencyAmount.text = amountField.text}
@@ -152,6 +152,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("row \(indexPath.row) is pressed")
+        var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor(red: 246, green: 246, blue: 9, alpha:1)
+        
     }
     
     

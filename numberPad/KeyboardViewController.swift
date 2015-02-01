@@ -34,6 +34,7 @@ class KeyboardViewController: UIInputViewController {
         
         view.addSubview(numberPadView)
         
+        view.backgroundColor = numberPadView.backgroundColor
     }
 
     override func didReceiveMemoryWarning() {
