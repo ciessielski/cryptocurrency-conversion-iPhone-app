@@ -11,10 +11,17 @@ import UIKit
 class currencyTbC: UITableViewCell {
 
     
-    @IBOutlet weak var currencyImage: UIImageView!
+
+    @IBOutlet weak var currencyImage: UIButton!
     @IBOutlet weak var currencyShort: UILabel!
     @IBOutlet weak var currencyAmount: UILabel!
     
+    @IBAction func currencyButtonPressed(sender: AnyObject)
+    
+    {
+       // currImage.image = UIImage(named: "bitcoin")
+        println("button pressed")
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

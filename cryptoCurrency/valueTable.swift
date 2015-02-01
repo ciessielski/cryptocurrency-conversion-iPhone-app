@@ -28,23 +28,25 @@ var currencyDictionary =
 class valueTable
 {
     var currencies: Array<currency> = []
-    
+    var cryptoCurrencies: Array<currency> = []
     
     init()
     {
         currencies.append(currency(slug: "USD", value: 1.0))
-        currencies.append(currency(slug: "EUR", value: 1.128))
-        currencies.append(currency(slug: "PLN", value: 0.269))
-        currencies.append(currency(slug: "BTC", value: 0.00458439))
-        currencies.append(currency(slug: "XRP"))
-        currencies.append(currency(slug: "LTC", value: 0.53536))
-        currencies.append(currency(slug: "BTS"))
-        currencies.append(currency(slug: "XPY"))
-        currencies.append(currency(slug: "STR"))
-        currencies.append(currency(slug: "DOGE"))
-        currencies.append(currency(slug: "MAID"))
-        currencies.append(currency(slug: "NXT"))
-        currencies.append(currency(slug: "DRK"))
+        currencies.append(currency(slug: "EUR", value: 0.886))
+        currencies.append(currency(slug: "PLN", value: 3.707))
+        
+        
+        cryptoCurrencies.append(currency(slug: "BTC", value: 0.00458439))
+        cryptoCurrencies.append(currency(slug: "XRP"))
+        cryptoCurrencies.append(currency(slug: "LTC", value: 0.53536))
+        cryptoCurrencies.append(currency(slug: "BTS"))
+        cryptoCurrencies.append(currency(slug: "XPY"))
+        cryptoCurrencies.append(currency(slug: "STR"))
+        cryptoCurrencies.append(currency(slug: "DOGE"))
+        cryptoCurrencies.append(currency(slug: "MAID"))
+        cryptoCurrencies.append(currency(slug: "NXT"))
+        cryptoCurrencies.append(currency(slug: "DRK"))
         assignAttributes()
     }
     

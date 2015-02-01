@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var curImage: UIImageView!
+    @IBOutlet weak var currLabel: UILabel!
    
     var currTable = valueTable()
     
@@ -27,22 +29,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         super.viewDidLoad()
         
-        //Register custom xell
+        //Register custom cell
         var nib = UINib(nibName:"currencyCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
 
     }
     
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // section 0 for fiat and section 2 for cryptocurrencies
+        return 2
+    }
+    
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         
-            return UITableViewCellEditingStyle.Delete    // fix the editingStyle bug
+        return UITableViewCellEditingStyle.Delete    // fix the editingStyle bug
 
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currTable.currencies.count
+        
+        switch (section)
+        
+        {
+            case 0: return currTable.currencies.count
+            case 1: return currTable.cryptoCurrencies.count
+            default: return 1
+        
+        }
     }
     
 
@@ -50,19 +65,60 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         var cell: currencyTbC  = tableView.dequeueReusableCellWithIdentifier("cell") as currencyTbC
 
-        cell.currencyImage?.image = UIImage(named:"bitcoin")
-        cell.currencyShort?.text = currTable.currencies[indexPath.row].slug
+        switch (indexPath.section)
         
-        if let cost = currTable.currencies[indexPath.row].value
         {
-            var costt = (amountField.text as NSString).doubleValue / cost
-
-            cell.currencyAmount.text = "\(costt)"
+        case 0:
+            
+            cell.currencyShort?.text = currTable.currencies[indexPath.row].slug
+            
+            if let cost = currTable.currencies[indexPath.row].value
+            {
+                var costt = (amountField.text as NSString).doubleValue * cost
+                cell.currencyAmount.text = "\(costt)"
+            }
+            else {cell.currencyAmount.text = amountField.text}
+            
+            return cell
+            
+        case 1:
+            cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug
+            if let cost = currTable.cryptoCurrencies[indexPath.row].value
+            {
+                var costt = (amountField.text as NSString).doubleValue * cost
+                cell.currencyAmount.text = "\(costt)"
+            }
+            else {cell.currencyAmount.text = amountField.text}
+            
+            return cell
+            
+        default: return cell
+            
         }
-        else {cell.currencyAmount.text = amountField.text}
         
-        return cell
         
+        //cell.currencyImage?.image = UIImage(named:"bitcoin")
+
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as HeaderCell
+        //headerCell.backgroundColor = UIColor.cyanColor()
+        
+        switch (section) {
+        case 0:
+            headerCell.headerLabel.text = "fiat currencies";
+            //return sectionHeaderView
+        case 1:
+            headerCell.headerLabel.text = "crypto currencies";
+
+        default:
+            headerCell.headerLabel.text = "Other";
+        }
+        
+        return headerCell
     }
     
     
@@ -77,7 +133,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             currTable.currencies.removeAtIndex(indexPath.row)
-            // The delete button doas not show up.. yet
+            // The delete button doas show up but it aint work.. yet
         }
     }
     
