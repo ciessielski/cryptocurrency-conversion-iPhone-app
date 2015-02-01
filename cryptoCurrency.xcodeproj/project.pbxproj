@@ -69,7 +69,7 @@
 		9FFE6DCE1A7D0B66002A6CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FFE6DD01A7D0B66002A6CBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FFE6DD31A7D0B66002A6CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = cryptoCurrency/Images.xcassets; sourceTree = "<group>"; };
 		9FFE6DD81A7D0B66002A6CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9FFE6DDE1A7D0B66002A6CBF /* cryptoCurrencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cryptoCurrencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFE6DE31A7D0B66002A6CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +141,7 @@
 		9FFE6DC01A7D0B65002A6CBF = {
 			isa = PBXGroup;
 			children = (
+				9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */,
 				9FFE6DCB1A7D0B65002A6CBF /* cryptoCurrency */,
 				9FFE6DE11A7D0B66002A6CBF /* cryptoCurrencyTests */,
 				9F28DA4D1A7E698D0002806C /* numberPad */,
@@ -175,7 +176,6 @@
 			children = (
 				9FFE6DCE1A7D0B66002A6CBF /* AppDelegate.swift */,
 				9FFE6DD71A7D0B66002A6CBF /* LaunchScreen.xib */,
-				9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */,
 				9FFE6DCD1A7D0B66002A6CBF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -559,6 +559,7 @@
 				9F28DA561A7E698D0002806C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FFE6DC41A7D0B65002A6CBF /* Build configuration list for PBXProject "cryptoCurrency" */ = {
 			isa = XCConfigurationList;
