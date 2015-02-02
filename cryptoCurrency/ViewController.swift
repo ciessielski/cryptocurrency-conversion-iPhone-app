@@ -8,8 +8,14 @@
 
 import UIKit
 
+let kURL = "http://api.cryptocoincharts.info/tradingPair/[btc_usd]"
+let mainQueue = dispatch_get_main_queue()
+let diffQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var data = NSString()
+    var images = [String:Double]()
     
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet var tableView: UITableView!
@@ -30,6 +36,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         super.viewDidLoad()
 
+        
+        
+        let request = NSURLRequest(URL: NSURL(string: kURL)!)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
+            response, data, error in
+            
+            if error != nil {
+                println(error!.localizedDescription)
+                return
+            }
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                var errorV: NSError?
+                self.data = (NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments, error: &errorV) as NSDictionary)["price"] as NSString
+                if errorV != nil {
+                    println(errorV!.localizedDescription)
+                    return
+                }
+
+                dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+                }
+            }
+            println("fdsfasafaf")
+            println(self.data)
+            
+        })
+        
+
+        
+        
+        
+        
         //Register custom cell
         var nib = UINib(nibName:"currencyCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")

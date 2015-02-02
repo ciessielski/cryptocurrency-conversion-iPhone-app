@@ -35,7 +35,7 @@
                             <action selector="currencyButtonPressed:" destination="hRl-lK-z60" eventType="touchUpInside" id="fqf-iS-xnP"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123,43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zw-7z-Kfd">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123,43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1zw-7z-Kfd">
                         <rect key="frame" x="221" y="27" width="91" height="20"/>
                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                         <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,26 +43,25 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-Yx-7LD">
                         <rect key="frame" x="8" y="11" width="52" height="51"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="52" id="4ZM-Lw-Vh3"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="18" id="7tR-wh-Hyf"/>
-                    <constraint firstAttribute="centerY" secondItem="HCp-Yx-7LD" secondAttribute="centerY" constant="-1" id="Dca-6s-3Eb"/>
-                    <constraint firstItem="xMf-lh-Gcc" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leadingMargin" id="F6Q-KJ-sPU"/>
-                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="leading" secondItem="pgP-yN-Zpt" secondAttribute="trailing" constant="89" id="JlQ-Ox-24R"/>
-                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="leading" id="LAC-ES-pOI"/>
-                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="trailing" secondItem="ApN-o5-bGI" secondAttribute="trailingMargin" id="OjQ-X2-uc5"/>
-                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="8" symbolic="YES" id="bYO-2i-7OI"/>
-                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leading" constant="68" id="dFq-Kk-cDp"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="252" id="dPJ-nQ-EOi"/>
-                    <constraint firstAttribute="centerX" secondItem="HCp-Yx-7LD" secondAttribute="centerX" constant="126" id="gHe-6c-HsT"/>
-                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="top" secondItem="xMf-lh-Gcc" secondAttribute="top" id="gr7-Ur-cXV"/>
-                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="baseline" secondItem="1zw-7z-Kfd" secondAttribute="baseline" constant="-1" id="mHM-UC-fkT"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="xMf-lh-Gcc" secondAttribute="bottom" constant="1" id="nF7-1U-G5Q"/>
-                    <constraint firstItem="xMf-lh-Gcc" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="3" id="pQZ-Qm-q7g"/>
-                    <constraint firstAttribute="centerX" secondItem="xMf-lh-Gcc" secondAttribute="centerX" constant="126" id="sNh-bC-K9d"/>
-                    <constraint firstAttribute="centerY" secondItem="xMf-lh-Gcc" secondAttribute="centerY" constant="-1" id="t1I-mc-IEI"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="bottom" secondItem="xMf-lh-Gcc" secondAttribute="bottom" id="02a-7y-1eh"/>
+                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="trailing" secondItem="ApN-o5-bGI" secondAttribute="trailingMargin" id="2xF-gg-5pY"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="top" secondItem="xMf-lh-Gcc" secondAttribute="top" id="6cP-0e-iyo"/>
+                    <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="HCp-Yx-7LD" secondAttribute="trailing" constant="8" symbolic="YES" id="6qs-ui-G8k"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leadingMargin" id="6sk-44-d4Z"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="leading" id="8c2-iZ-dcu"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HCp-Yx-7LD" secondAttribute="bottom" constant="1" id="Jv8-K1-k5k"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="trailing" secondItem="xMf-lh-Gcc" secondAttribute="trailing" id="KgZ-Ep-WKT"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="centerY" secondItem="pgP-yN-Zpt" secondAttribute="centerY" id="LTr-Fl-sDM"/>
+                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="leading" secondItem="pgP-yN-Zpt" secondAttribute="trailing" constant="89" id="hdV-qg-2SR"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="3" id="pT9-BK-W3A"/>
+                    <constraint firstItem="1zw-7z-Kfd" firstAttribute="bottom" secondItem="pgP-yN-Zpt" secondAttribute="bottom" id="zop-3r-bIA"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
