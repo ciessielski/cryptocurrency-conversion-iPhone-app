@@ -2,18 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "euro-1.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "euro.png"
+      "filename" : "Euro.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "euro-2.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

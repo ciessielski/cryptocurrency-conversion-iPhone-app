@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F28DA511A7E698D0002806C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F28DA501A7E698D0002806C /* KeyboardViewController.swift */; };
-		9F28DA541A7E698D0002806C /* numberPad.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9F28DA4C1A7E698D0002806C /* numberPad.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9F28DA5A1A7E6A790002806C /* numberPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F28DA591A7E6A790002806C /* numberPad.xib */; };
 		9F9CCCAD1A7D35EF00BF4977 /* currencyTbC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CCCAC1A7D35EE00BF4977 /* currencyTbC.swift */; };
 		9F9CCCB21A7D79BD00BF4977 /* currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CCCB11A7D79BD00BF4977 /* currency.swift */; };
 		9F9CCCB41A7D7DE900BF4977 /* valueTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CCCB31A7D7DE900BF4977 /* valueTable.swift */; };
@@ -24,13 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9F28DA521A7E698D0002806C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FFE6DC11A7D0B65002A6CBF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9F28DA4B1A7E698D0002806C;
-			remoteInfo = numberPad;
-		};
 		9FFE6DDF1A7D0B66002A6CBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FFE6DC11A7D0B65002A6CBF /* Project object */;
@@ -47,7 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9F28DA541A7E698D0002806C /* numberPad.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,10 +44,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9F28DA4C1A7E698D0002806C /* numberPad.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = numberPad.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F28DA4F1A7E698D0002806C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F28DA501A7E698D0002806C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
-		9F28DA591A7E6A790002806C /* numberPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = numberPad.xib; sourceTree = "<group>"; };
 		9F9CCCAC1A7D35EE00BF4977 /* currencyTbC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = currencyTbC.swift; path = ../currencyTbC.swift; sourceTree = "<group>"; };
 		9F9CCCB11A7D79BD00BF4977 /* currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currency.swift; sourceTree = "<group>"; };
 		9F9CCCB31A7D7DE900BF4977 /* valueTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = valueTable.swift; sourceTree = "<group>"; };
@@ -77,13 +62,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F28DA491A7E698D0002806C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9FFE6DC61A7D0B65002A6CBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,24 +79,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F28DA4D1A7E698D0002806C /* numberPad */ = {
-			isa = PBXGroup;
-			children = (
-				9F28DA501A7E698D0002806C /* KeyboardViewController.swift */,
-				9F28DA4E1A7E698D0002806C /* Supporting Files */,
-				9F28DA591A7E6A790002806C /* numberPad.xib */,
-			);
-			path = numberPad;
-			sourceTree = "<group>";
-		};
-		9F28DA4E1A7E698D0002806C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9F28DA4F1A7E698D0002806C /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		9F9CCCAE1A7D4CF400BF4977 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +104,6 @@
 				9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */,
 				9FFE6DCB1A7D0B65002A6CBF /* cryptoCurrency */,
 				9FFE6DE11A7D0B66002A6CBF /* cryptoCurrencyTests */,
-				9F28DA4D1A7E698D0002806C /* numberPad */,
 				9FFE6DCA1A7D0B65002A6CBF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,7 +113,6 @@
 			children = (
 				9FFE6DC91A7D0B65002A6CBF /* cryptoCurrency.app */,
 				9FFE6DDE1A7D0B66002A6CBF /* cryptoCurrencyTests.xctest */,
-				9F28DA4C1A7E698D0002806C /* numberPad.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,23 +159,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F28DA4B1A7E698D0002806C /* numberPad */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9F28DA571A7E698D0002806C /* Build configuration list for PBXNativeTarget "numberPad" */;
-			buildPhases = (
-				9F28DA481A7E698D0002806C /* Sources */,
-				9F28DA491A7E698D0002806C /* Frameworks */,
-				9F28DA4A1A7E698D0002806C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = numberPad;
-			productName = numberPad;
-			productReference = 9F28DA4C1A7E698D0002806C /* numberPad.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		9FFE6DC81A7D0B65002A6CBF /* cryptoCurrency */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FFE6DE81A7D0B66002A6CBF /* Build configuration list for PBXNativeTarget "cryptoCurrency" */;
@@ -230,7 +171,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9F28DA531A7E698D0002806C /* PBXTargetDependency */,
 			);
 			name = cryptoCurrency;
 			productName = cryptoCurrency;
@@ -264,9 +204,6 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = charatonik;
 				TargetAttributes = {
-					9F28DA4B1A7E698D0002806C = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
 					9FFE6DC81A7D0B65002A6CBF = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -291,20 +228,11 @@
 			targets = (
 				9FFE6DC81A7D0B65002A6CBF /* cryptoCurrency */,
 				9FFE6DDD1A7D0B66002A6CBF /* cryptoCurrencyTests */,
-				9F28DA4B1A7E698D0002806C /* numberPad */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9F28DA4A1A7E698D0002806C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F28DA5A1A7E6A790002806C /* numberPad.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9FFE6DC71A7D0B65002A6CBF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,14 +254,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F28DA481A7E698D0002806C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F28DA511A7E698D0002806C /* KeyboardViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9FFE6DC51A7D0B65002A6CBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,11 +278,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9F28DA531A7E698D0002806C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9F28DA4B1A7E698D0002806C /* numberPad */;
-			targetProxy = 9F28DA521A7E698D0002806C /* PBXContainerItemProxy */;
-		};
 		9FFE6DE01A7D0B66002A6CBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9FFE6DC81A7D0B65002A6CBF /* cryptoCurrency */;
@@ -390,30 +305,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9F28DA551A7E698D0002806C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = numberPad/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9F28DA561A7E698D0002806C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = numberPad/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		9FFE6DE61A7D0B66002A6CBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -552,15 +443,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F28DA571A7E698D0002806C /* Build configuration list for PBXNativeTarget "numberPad" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9F28DA551A7E698D0002806C /* Debug */,
-				9F28DA561A7E698D0002806C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9FFE6DC41A7D0B65002A6CBF /* Build configuration list for PBXProject "cryptoCurrency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

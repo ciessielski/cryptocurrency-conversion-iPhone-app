@@ -2,18 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "darkcoin-1.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "darkcoin.png"
+      "filename" : "Darkcoin.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "darkcoin-2.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

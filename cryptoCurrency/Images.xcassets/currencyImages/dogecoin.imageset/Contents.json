@@ -2,18 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "dogecoin-1.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "dogecoin.png"
+      "filename" : "DogeCoin.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "dogecoin-2.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

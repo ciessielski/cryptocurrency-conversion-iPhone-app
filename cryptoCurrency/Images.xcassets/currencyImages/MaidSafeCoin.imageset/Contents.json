@@ -2,18 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "maidsafecoin-1.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "maidsafecoin.png"
+      "filename" : "MaidSafeCoin.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "maidsafecoin-2.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

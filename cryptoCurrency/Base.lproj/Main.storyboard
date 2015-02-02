@@ -122,6 +122,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Dollar1" width="300" height="300"/>
+        <image name="Dollar1" width="150" height="150"/>
     </resources>
 </document>

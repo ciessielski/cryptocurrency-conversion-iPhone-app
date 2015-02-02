@@ -17,8 +17,6 @@ class currency
     var image: UIImage?
     let slug: String
     
-    //Will probably change after adding the API
-    
     init(slug: String)
     {
         self.slug = slug
