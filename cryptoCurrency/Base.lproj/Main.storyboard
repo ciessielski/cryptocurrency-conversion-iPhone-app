@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-Tc-ild">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-Tc-ild">
                                 <rect key="frame" x="0.0" y="114" width="600" height="486"/>
                                 <color key="backgroundColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -80,7 +80,7 @@
                                     <action selector="donePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aWE-HS-P0z"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stellar1" translatesAutoresizingMaskIntoConstraints="NO" id="Xiu-OK-fJw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dollar1" translatesAutoresizingMaskIntoConstraints="NO" id="Xiu-OK-fJw">
                                 <rect key="frame" x="16" y="42" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="epp-9P-K1L"/>
@@ -122,6 +122,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Stellar1" width="150" height="150"/>
+        <image name="Dollar1" width="150" height="150"/>
     </resources>
 </document>

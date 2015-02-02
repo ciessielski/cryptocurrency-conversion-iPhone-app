@@ -52,6 +52,12 @@ class valueTable
     }
     
     
+    func getJson(){
+    
+    
+    }
+    
+    
     func assignAttributes()
     {
         for curr in currencies

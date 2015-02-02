@@ -15,7 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var curImage: UIImageView!
     @IBOutlet weak var currLabel: UILabel!
-   
+    // tempval contains the value of the currency we want to convert
+    var tempval = 1.0
     var currTable = valueTable()
     
     @IBAction func donePressed(sender: AnyObject) {
@@ -74,7 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if let cost = currTable.currencies[indexPath.row].value
             {
-                var costt = (amountField.text as NSString).doubleValue / cost
+                var costt = tempval * (amountField.text as NSString).doubleValue / cost
                 cell.currencyAmount.text = String(format: "%.2f", costt)
             }
             else {cell.currencyAmount.text = amountField.text}
@@ -90,8 +91,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug
             if let cost = currTable.cryptoCurrencies[indexPath.row].value
             {
-                var costt = (amountField.text as NSString).doubleValue / cost
-                cell.currencyAmount.text = String(format: "%.2f", costt)
+                var costt = tempval * (amountField.text as NSString).doubleValue / cost
+                cell.currencyAmount.text = String(format: "%.4f", costt)
             }
             else {cell.currencyAmount.text = amountField.text}
             
@@ -108,10 +109,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         default: return cell
             
         }
-        
-        
-        
-
         
     }
     
@@ -135,7 +132,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        return false
     }
     
     
@@ -143,17 +140,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if editingStyle == .Delete
         {
-            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            // currTable.currencies.removeAtIndex(indexPath.row)
-            // The delete button doas show up but it aint work.. yet
         }
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("row \(indexPath.row) is pressed")
-        var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        selectedCell.contentView.backgroundColor = UIColor(red: 246, green: 246, blue: 9, alpha:1)
+       // println("row \(indexPath.row) is pressed  \(currTable.cryptoCurrencies[indexPath.row].slug)")
+        if indexPath.section == 0
+        {
+            currLabel.text = currTable.currencies[indexPath.row].slug
+            curImage.image = UIImage(named: "\(currTable.currencies[indexPath.row].name!)1")
+            tempval = currTable.currencies[indexPath.row].value!
+            self.tableView.reloadData()
+        
+        }
+        
+        if indexPath.section == 1
+        {
+            currLabel.text = currTable.cryptoCurrencies[indexPath.row].slug
+            curImage.image = UIImage(named: "\(currTable.cryptoCurrencies[indexPath.row].name!)1")
+            tempval = currTable.cryptoCurrencies[indexPath.row].value!
+            self.tableView.reloadData()
+
+            
+        }
+
+
+     //   var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+     //   selectedCell.contentView.backgroundColor = UIColor(red: 246, green: 246, blue: 9, alpha:1)
         
     }
     

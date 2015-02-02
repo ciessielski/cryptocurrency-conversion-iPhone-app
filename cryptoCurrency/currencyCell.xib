@@ -41,19 +41,23 @@
                         <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-Yx-7LD">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HCp-Yx-7LD">
                         <rect key="frame" x="8" y="11" width="52" height="51"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="18" id="7tR-wh-Hyf"/>
+                    <constraint firstAttribute="centerY" secondItem="HCp-Yx-7LD" secondAttribute="centerY" constant="-1" id="Dca-6s-3Eb"/>
                     <constraint firstItem="xMf-lh-Gcc" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leadingMargin" id="F6Q-KJ-sPU"/>
                     <constraint firstItem="1zw-7z-Kfd" firstAttribute="leading" secondItem="pgP-yN-Zpt" secondAttribute="trailing" constant="89" id="JlQ-Ox-24R"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="leading" id="LAC-ES-pOI"/>
                     <constraint firstItem="1zw-7z-Kfd" firstAttribute="trailing" secondItem="ApN-o5-bGI" secondAttribute="trailingMargin" id="OjQ-X2-uc5"/>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="8" symbolic="YES" id="bYO-2i-7OI"/>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leading" constant="68" id="dFq-Kk-cDp"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xMf-lh-Gcc" secondAttribute="trailing" constant="252" id="dPJ-nQ-EOi"/>
+                    <constraint firstAttribute="centerX" secondItem="HCp-Yx-7LD" secondAttribute="centerX" constant="126" id="gHe-6c-HsT"/>
+                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="top" secondItem="xMf-lh-Gcc" secondAttribute="top" id="gr7-Ur-cXV"/>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="baseline" secondItem="1zw-7z-Kfd" secondAttribute="baseline" constant="-1" id="mHM-UC-fkT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xMf-lh-Gcc" secondAttribute="bottom" constant="1" id="nF7-1U-G5Q"/>
                     <constraint firstItem="xMf-lh-Gcc" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="3" id="pQZ-Qm-q7g"/>
@@ -66,7 +70,7 @@
                 <outlet property="currencyImage" destination="HCp-Yx-7LD" id="8sR-mR-o6H"/>
                 <outlet property="currencyShort" destination="pgP-yN-Zpt" id="ZA0-cv-Nfg"/>
             </connections>
-            <point key="canvasLocation" x="462" y="352"/>
+            <point key="canvasLocation" x="206" y="-45"/>
         </tableViewCell>
     </objects>
 </document>
