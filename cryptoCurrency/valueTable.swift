@@ -92,7 +92,7 @@ class valueTable
                 kURL += ("[btc_\(cur.slug)]")
                 println(kURL)
                 
-                
+                  
                 let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
                 var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
                 var jsonSource: NSData = NSURLConnection.sendSynchronousRequest(URLrequest, returningResponse: response, error: nil)!
@@ -102,7 +102,7 @@ class valueTable
                 
                 println(data.doubleValue)
             
-                cur.value = 1/(data.doubleValue)
+                cur.value = (data.doubleValue)
                 valueDictionary[cur.slug] = (data.doubleValue)
             }
         println(valueDictionary)

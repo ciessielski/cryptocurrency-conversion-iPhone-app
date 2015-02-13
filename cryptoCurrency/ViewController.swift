@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if let cost = currTable.currencies[indexPath.row].value    //value of the currency
             {
-                var costt = tempval * (amountField.text as NSString).doubleValue / cost
+                var costt = ((amountField.text as NSString).doubleValue / tempval) * cost //temp rate
                 cell.currencyAmount.text = String(format: "%.2f", costt)
             }
             else {cell.currencyAmount.text = amountField.text}
@@ -93,10 +93,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         case 1:
             cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug.uppercaseString
+            
             if let cost = currTable.cryptoCurrencies[indexPath.row].value
             {
                 
-                var costt = tempval * (amountField.text as NSString).doubleValue / cost
+                var costt = ((amountField.text as NSString).doubleValue  / tempval) * cost
                     cell.currencyAmount.text = String(format: "%.4f",costt)
 
             }
