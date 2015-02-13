@@ -8,16 +8,9 @@
 
 import UIKit
 
-let kURL = "http://api.cryptocoincharts.info/tradingPair/[btc_usd]"
-let mainQueue = dispatch_get_main_queue()
-let diffQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-
-
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var data = NSString()
-    var images = [String:Double]()
     
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet var tableView: UITableView!
@@ -38,45 +31,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
         
-        
-        let request = NSURLRequest(URL: NSURL(string: kURL)!)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:
-        {
-            response, data, error in
-            
-            if  error != nil
-            {
-                println(error!.localizedDescription)
-                return
-            }
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
-            {
-                var errorV: NSError?
-                self.data = (NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments, error: &errorV) as NSDictionary)["price"] as NSString
-                if errorV != nil
-                {
-                    println(errorV!.localizedDescription)
-                    return
-                }
-
-                dispatch_async(dispatch_get_main_queue())
-                {
-                    self.tableView.reloadData()
-                }
-            }
-            println(self.data)
-            
-            })
-        
-
+            currTable.getJson()
             //Register custom cell
             var nib = UINib(nibName:"currencyCell", bundle: nil)
             tableView.registerNib(nib, forCellReuseIdentifier: "cell")
 
-        }
+    }
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -113,9 +74,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
         case 0:
             
-            cell.currencyShort?.text = currTable.currencies[indexPath.row].slug
+            cell.currencyShort?.text = currTable.currencies[indexPath.row].slug.uppercaseString
             
-            if let cost = currTable.currencies[indexPath.row].value
+            
+            if let cost = currTable.currencies[indexPath.row].value    //value of the currency
             {
                 var costt = tempval * (amountField.text as NSString).doubleValue / cost
                 cell.currencyAmount.text = String(format: "%.2f", costt)
@@ -130,11 +92,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
             
         case 1:
-            cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug
+            cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug.uppercaseString
             if let cost = currTable.cryptoCurrencies[indexPath.row].value
             {
+                
                 var costt = tempval * (amountField.text as NSString).doubleValue / cost
-                cell.currencyAmount.text = String(format: "%.4f", costt)
+                    cell.currencyAmount.text = String(format: "%.4f",costt)
+
             }
             else {cell.currencyAmount.text = amountField.text}
             
@@ -189,7 +153,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         if indexPath.section == 0
         {
-            currLabel.text = currTable.currencies[indexPath.row].slug
+            currLabel.text = currTable.currencies[indexPath.row].slug.uppercaseString
             curImage.image = UIImage(named: "\(currTable.currencies[indexPath.row].name!)1")
             tempval = currTable.currencies[indexPath.row].value!
             self.tableView.reloadData()
@@ -198,7 +162,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if indexPath.section == 1
         {
-            currLabel.text = currTable.cryptoCurrencies[indexPath.row].slug
+            currLabel.text = currTable.cryptoCurrencies[indexPath.row].slug.uppercaseString
             curImage.image = UIImage(named: "\(currTable.cryptoCurrencies[indexPath.row].name!)1")
             tempval = currTable.cryptoCurrencies[indexPath.row].value!
             self.tableView.reloadData()

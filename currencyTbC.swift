@@ -19,7 +19,6 @@ class currencyTbC: UITableViewCell {
     @IBAction func currencyButtonPressed(sender: AnyObject)
     
     {
-       // currImage.image = UIImage(named: "bitcoin")
         println("button pressed")
     }
     

@@ -9,22 +9,25 @@
 import Foundation
 import UIKit
 
+let tURL = "http://api.cryptocoincharts.info/tradingPair/"
+var data = NSString()
+
 var currencyDictionary =
-    [ "USD"     : "Dollar"
-    , "EUR"     : "Euro"
-    , "GBP"     : "Pound"
-    , "BTC"     : "Bitcoin"
-    , "XRP"     : "Ripple"
-    , "LTC"     : "Litecoin"
-    , "BTS"     : "BitShares"
-    , "XPY"     : "PayCoin"
-    , "STR"     : "Stellar"
-    , "DOGE"    : "DogeCoin"
-    , "MAID"    : "MaidSafeCoin"
-    , "NXT"     : "Nxt"
-    , "DRK"     : "Darkcoin"]
+    [ "usd"     : "Dollar"
+    , "eur"     : "Euro"
+    , "gbp"     : "Pound"
+    , "btc"     : "Bitcoin"
+    , "xrp"     : "Ripple"
+    , "ltc"     : "Litecoin"
+    , "bts"     : "BitShares"
+    , "xpy"     : "PayCoin"
+    , "str"     : "Stellar"
+    , "doge"    : "DogeCoin"
+    , "maid"    : "MaidSafeCoin"
+    , "nxt"     : "Nxt"
+    , "drk"     : "Darkcoin"]
 
-
+var valueDictionary = [NSString:Double]()
 
 class valueTable
 {
@@ -33,29 +36,82 @@ class valueTable
     
     init()
     {
-        currencies.append(currency(slug: "USD", value: 1.0))
-        currencies.append(currency(slug: "EUR", value: 1.13))
-        currencies.append(currency(slug: "GBP", value: 1.51))
+        currencies.append(currency(slug: "usd"))
+        currencies.append(currency(slug: "eur"))
+        currencies.append(currency(slug: "gbp"))
         
         
-        cryptoCurrencies.append(currency(slug: "BTC", value:219.13 ))
-        cryptoCurrencies.append(currency(slug: "XRP", value:0.0138))
-        cryptoCurrencies.append(currency(slug: "LTC", value: 1.75))
-        cryptoCurrencies.append(currency(slug: "BTS", value:0.010232))
-        cryptoCurrencies.append(currency(slug: "XPY", value:1.79))
-        cryptoCurrencies.append(currency(slug: "STR", value:0.004099))
-        cryptoCurrencies.append(currency(slug: "DOGE", value:0.000139))
-        cryptoCurrencies.append(currency(slug: "MAID", value:0.030681))
-        cryptoCurrencies.append(currency(slug: "NXT", value:0.011446))
-        cryptoCurrencies.append(currency(slug: "DRK", value:1.70))
+        cryptoCurrencies.append(currency(slug: "btc"))
+        cryptoCurrencies.append(currency(slug: "xrp"))
+        cryptoCurrencies.append(currency(slug: "ltc"))
+        cryptoCurrencies.append(currency(slug: "bts"))
+        cryptoCurrencies.append(currency(slug: "xpy"))
+        cryptoCurrencies.append(currency(slug: "str"))
+        cryptoCurrencies.append(currency(slug: "doge"))
+        cryptoCurrencies.append(currency(slug: "maid"))
+        cryptoCurrencies.append(currency(slug: "nxt"))
+        cryptoCurrencies.append(currency(slug: "drk"))
         assignAttributes()
     }
     
-    
+
     func getJson(){
-    
-    
+        
+        
+        valueDictionary["btc"] = 1.0
+        cryptoCurrencies[0].value = 1.0
+        for cur  in cryptoCurrencies
+        {
+            if cur.slug != "btc"{
+            var kURL = tURL
+            
+            kURL += ("[\(cur.slug)_btc]")
+            println(kURL)
+            
+            
+            let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
+            var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+            var jsonSource: NSData = NSURLConnection.sendSynchronousRequest(URLrequest, returningResponse: response, error: nil)!
+            
+            
+            data = (NSJSONSerialization.JSONObjectWithData(jsonSource, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary)["price"] as NSString
+            
+            println(1/data.doubleValue)
+            
+            cur.value = 1/(data.doubleValue)
+            valueDictionary[cur.slug] = 1/(data.doubleValue)
+            }
+            
+        }
+
+        
+        for cur  in currencies
+        {
+                var kURL = tURL
+                
+                kURL += ("[btc_\(cur.slug)]")
+                println(kURL)
+                
+                
+                let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
+                var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+                var jsonSource: NSData = NSURLConnection.sendSynchronousRequest(URLrequest, returningResponse: response, error: nil)!
+                
+                
+                data = (NSJSONSerialization.JSONObjectWithData(jsonSource, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary)["price"] as NSString
+                
+                println(data.doubleValue)
+            
+                cur.value = 1/(data.doubleValue)
+                valueDictionary[cur.slug] = (data.doubleValue)
+            }
+        println(valueDictionary)
+        
+        
+        
     }
+    
+    
     
     
     func assignAttributes()
