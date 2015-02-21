@@ -32,11 +32,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         super.viewDidLoad()
         
-            currTable.getJson()
-            //Register custom cell
+        dispatch_async(dispatch_get_main_queue())
+        {
+            self.currTable.getJson()
+            self.tableView.reloadData()
+        }
+        
             var nib = UINib(nibName:"currencyCell", bundle: nil)
             tableView.registerNib(nib, forCellReuseIdentifier: "cell")
-
     }
     
     
@@ -82,7 +85,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 var costt = ((amountField.text as NSString).doubleValue / tempval) * cost //temp rate
                 cell.currencyAmount.text = String(format: "%.2f", costt)
             }
-            else {cell.currencyAmount.text = amountField.text}
+            else {cell.currencyAmount.text = "-"}
             
             
             if let im = currTable.currencies[indexPath.row].image
@@ -101,7 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     cell.currencyAmount.text = String(format: "%.4f",costt)
 
             }
-            else {cell.currencyAmount.text = amountField.text}
+            else {cell.currencyAmount.text = "-"}
             
             if let im = currTable.cryptoCurrencies[indexPath.row].image
             {
