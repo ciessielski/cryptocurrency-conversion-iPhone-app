@@ -55,33 +55,33 @@ class valueTable
     }
     
 
-    func getJson(){
-        
-        
+    func getJson()
+    
+    {
         valueDictionary["btc"] = 1.0
         cryptoCurrencies[0].value = 1.0
         for cur  in cryptoCurrencies
         {
-            if cur.slug != "btc"{
-            var kURL = tURL
+            if cur.slug != "btc"
+            {
+                var kURL = tURL
             
-            kURL += ("[\(cur.slug)_btc]")
-            println(kURL)
-            
-            
-            let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
-            var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-            var jsonSource: NSData = NSURLConnection.sendSynchronousRequest(URLrequest, returningResponse: response, error: nil)!
+                kURL += ("[\(cur.slug)_btc]")
+                println(kURL)
             
             
-            data = (NSJSONSerialization.JSONObjectWithData(jsonSource, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary)["price"] as NSString
-            
-            println(1/data.doubleValue)
-            
-            cur.value = 1/(data.doubleValue)
-            valueDictionary[cur.slug] = 1/(data.doubleValue)
+                let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
+                var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+                var jsonSource: NSData = NSURLConnection.sendSynchronousRequest(URLrequest, returningResponse: response, error: nil)!
+                
+                
+                data = (NSJSONSerialization.JSONObjectWithData(jsonSource, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary)["price"] as NSString
+                
+                println(1/data.doubleValue)
+                
+                cur.value = 1/(data.doubleValue)
+                valueDictionary[cur.slug] = 1/(data.doubleValue)
             }
-            
         }
 
         
@@ -104,14 +104,10 @@ class valueTable
             
                 cur.value = (data.doubleValue)
                 valueDictionary[cur.slug] = (data.doubleValue)
-            }
-        println(valueDictionary)
+        }
         
-        
-        
+        println(valueDictionary)   //nslog
     }
-    
-    
     
     
     func assignAttributes()
@@ -122,17 +118,10 @@ class valueTable
             curr.image = UIImage(named: curr.name!)
         }
         
-        
         for curr in cryptoCurrencies
         {
             curr.name = currencyDictionary[curr.slug]
             curr.image = UIImage(named: curr.name!)
         }
     }
-    
-    func reset()
-    {
-
-    }
-
 }
