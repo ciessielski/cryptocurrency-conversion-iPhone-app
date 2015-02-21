@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var curImage: UIImageView!
     @IBOutlet weak var currLabel: UILabel!
     
-    // tempval contains the value of the currency we want to convert
     var tempval = 1.0
     var currTable = valueTable()
     
@@ -31,15 +30,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor (red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1.0)
         
-        dispatch_async(dispatch_get_main_queue())
+        if Reachability.isConnectedToNetwork()
         {
-            self.currTable.getJson()
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue())
+                {
+                    self.currTable.getJson()
+                    self.tableView.reloadData()
+            }
+        }
+            
+        else
+        {
+            var alert : UIAlertView = UIAlertView(title: "No internet connection", message: "Check your internet connection and try again later", delegate: nil, cancelButtonTitle: "Ok")
+            alert.show()
         }
         
-            var nib = UINib(nibName:"currencyCell", bundle: nil)
-            tableView.registerNib(nib, forCellReuseIdentifier: "cell")
+        var nib = UINib(nibName:"currencyCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "cell")
     }
     
     
@@ -54,6 +63,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return UITableViewCellEditingStyle.Delete
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 72
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
