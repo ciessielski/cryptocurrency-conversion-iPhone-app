@@ -8,160 +8,156 @@
 
 import UIKit
 
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
     @IBOutlet weak var amountField: UITextField!
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var curImage: UIImageView!
-    @IBOutlet weak var currLabel: UILabel!
+    @IBOutlet      var tableView:   UITableView!
+    @IBOutlet weak var curImage:    UIImageView!
+    @IBOutlet weak var currLabel:   UILabel!
+    var                refreshControl:UIRefreshControl!
+
+    var tempval    = 1.0
+    var currTable  = valueTable()
     
-    var tempval = 1.0
-    var currTable = valueTable()
-    
-    @IBAction func donePressed(sender: AnyObject) {
-        
-        amountField.resignFirstResponder()
-        self.tableView.reloadData()
-    }
-    
-  
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor (red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1.0)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "newData:", name: "ReceivedData", object: nil)
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
+        var nib = UINib(nibName:"currencyCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "cell")
+        refresh(self)
+    }
+    
+    @IBAction func donePressed(sender: AnyObject)
+    {
+        amountField.resignFirstResponder()
+        self.tableView.reloadData()
+    }
+    
+    func refresh(sender:AnyObject)
+    {
         if Reachability.isConnectedToNetwork()
         {
-            dispatch_async(dispatch_get_main_queue())
-                {
-                    self.currTable.getJson()
-                    self.tableView.reloadData()
-            }
+            self.currTable.getJson()
         }
             
         else
         {
             var alert : UIAlertView = UIAlertView(title: "No internet connection", message: "Check your internet connection and try again later", delegate: nil, cancelButtonTitle: "Ok")
-            alert.show()
+                alert.show()
+            self.refreshControl.endRefreshing()
         }
-        
-        var nib = UINib(nibName:"currencyCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "cell")
     }
     
+    func newData(object: AnyObject)
+    {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // section 0 for fiat and section 2 for cryptocurrencies
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        // section 0 for fiat, section 1 for cryptocurrencies
         return 2
     }
     
     
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle
+    {
         return UITableViewCellEditingStyle.Delete
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
         return 72
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         switch (section)
-        
         {
-            case 0: return currTable.currencies.count
-            case 1: return currTable.cryptoCurrencies.count
+            case  0: return currTable.currencies.count
+            case  1: return currTable.cryptoCurrencies.count
             default: return 1
-        
         }
     }
     
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell: currencyTbC  = tableView.dequeueReusableCellWithIdentifier("cell") as currencyTbC
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        var cell: currencyTbC  = tableView.dequeueReusableCellWithIdentifier("cell") as! currencyTbC
 
         switch (indexPath.section)
-        
         {
-        case 0:
+            case 0:
             
-            cell.currencyShort?.text = currTable.currencies[indexPath.row].slug.uppercaseString
+                cell.currencyShort?.text = currTable.currencies[indexPath.row].slug.uppercaseString
+            
+                if let cost = currTable.currencies[indexPath.row].value    //value of the currency
+                {
+                    var costt = ((amountField.text as NSString).doubleValue / tempval) * cost //temp rate
+                    cell.currencyAmount.text = String(format: "%.2f", costt)
+                }
+                else {cell.currencyAmount.text = "-"}
             
             
-            if let cost = currTable.currencies[indexPath.row].value    //value of the currency
-            {
-                var costt = ((amountField.text as NSString).doubleValue / tempval) * cost //temp rate
-                cell.currencyAmount.text = String(format: "%.2f", costt)
-            }
-            else {cell.currencyAmount.text = "-"}
+                if let im = currTable.currencies[indexPath.row].image
+                {
+                    cell.currencyImage.image = im
+                }
+                return cell
             
-            
-            if let im = currTable.currencies[indexPath.row].image
-            {
-                cell.currencyImage.image = im
-            }
-            return cell
-            
-        case 1:
-            cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug.uppercaseString
-            
-            if let cost = currTable.cryptoCurrencies[indexPath.row].value
-            {
+            case 1:
                 
-                var costt = ((amountField.text as NSString).doubleValue  / tempval) * cost
+                cell.currencyShort?.text = currTable.cryptoCurrencies[indexPath.row].slug.uppercaseString
+            
+                if let cost = currTable.cryptoCurrencies[indexPath.row].value
+                {
+                    var costt = ((amountField.text as NSString).doubleValue  / tempval) * cost
                     cell.currencyAmount.text = String(format: "%.4f",costt)
+                }
+                else {cell.currencyAmount.text = "-"}
+            
+                if let im = currTable.cryptoCurrencies[indexPath.row].image
+                {
+                    cell.currencyImage.image = im
+                }
+                return cell
 
-            }
-            else {cell.currencyAmount.text = "-"}
-            
-            if let im = currTable.cryptoCurrencies[indexPath.row].image
-            {
-                cell.currencyImage.image = im
-            }
-            else {
-            }
-        
-            return cell
-
-            
-        default: return cell
-            
+            default: return cell
         }
-        
     }
     
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as HeaderCell
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let  headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! HeaderCell
         
-        switch (section) {
-        case 0:
-            headerCell.headerLabel.text = "FIAT CURRENCIES";
-            //return sectionHeaderView
-        case 1:
-            headerCell.headerLabel.text = "CRYPTOCURRENCIES";
+        switch (section)
+        {
+            case 0:
+            
+                headerCell.headerLabel.text = "FIAT CURRENCIES";
+                //return sectionHeaderView
+            case 1:
+                headerCell.headerLabel.text = "CRYPTOCURRENCIES";
 
-        default:
-            headerCell.headerLabel.text = "Other";
+            default:
+                headerCell.headerLabel.text = "Other";
         }
-        
         return headerCell
     }
     
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
         return false
-    }
-    
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if editingStyle == .Delete
-        {}  // no editing commitment in this version
     }
     
     
@@ -183,12 +179,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tempval = currTable.cryptoCurrencies[indexPath.row].value!
             self.tableView.reloadData()
 
-            
         }
     }
     
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

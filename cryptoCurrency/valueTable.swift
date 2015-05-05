@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 let tURL = "http://api.cryptocoincharts.info/tradingPair/"
-var data = NSString()
+var dataa = NSString()
+var dat = NSString()
 
 var currencyDictionary =
     [ "usd"     : "Dollar"
@@ -60,53 +61,70 @@ class valueTable
     {
         valueDictionary["btc"] = 1.0
         cryptoCurrencies[0].value = 1.0
+        
+            for cur  in currencies
+            {
+                if cur.slug != "btc"
+                {
+                    var kURL = tURL
+                    kURL += ("[btc_\(cur.slug)]")
+                    println(kURL)
+            
+                    let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
+                    let queue:NSOperationQueue = NSOperationQueue()
+                            NSURLConnection.sendAsynchronousRequest(URLrequest, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                            var err: NSError
+                                
+                            dataa = (NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary)["price"] as! NSString
+                                
+                            println("\(cur.slug)   \(dataa)")
+                            cur.value = (dataa.doubleValue)
+                            valueDictionary[cur.slug] = dataa.doubleValue
+                                
+                            dispatch_async(dispatch_get_main_queue())
+                            {
+                                if valueDictionary.count == currencyDictionary.count
+                                {
+                                    NSNotificationCenter.defaultCenter().postNotificationName("ReceivedData", object: nil)
+                                }
+                            }
+                    })
+                }
+            }
+        
+
+        
         for cur  in cryptoCurrencies
         {
             if cur.slug != "btc"
             {
                 var kURL = tURL
-            
                 kURL += ("[\(cur.slug)_btc]")
                 println(kURL)
-            
-            
+                
                 let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
-                var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-                var jsonSource: NSData = NSURLConnection.sendSynchronousRequest(URLrequest, returningResponse: response, error: nil)!
-                
-                
-                data = (NSJSONSerialization.JSONObjectWithData(jsonSource, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary)["price"] as NSString
-                
-                println(1/data.doubleValue)
-                
-                cur.value = 1/(data.doubleValue)
-                valueDictionary[cur.slug] = 1/(data.doubleValue)
+                let queue:NSOperationQueue = NSOperationQueue()
+                        NSURLConnection.sendAsynchronousRequest(URLrequest, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                        var err: NSError
+                    
+                        var data1: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
+                        dataa = (NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary)["price"] as! NSString
+
+                        println("\(cur.slug)   \(1/dataa.doubleValue)")
+                        cur.value = 1/(dataa.doubleValue)
+                        valueDictionary[cur.slug] = 1/(dataa.doubleValue)
+                    
+                        dispatch_async(dispatch_get_main_queue())
+                        {
+                            if valueDictionary.count == currencyDictionary.count
+                            {
+                                println("\(valueDictionary)")
+                                NSNotificationCenter.defaultCenter().postNotificationName("ReceivedData", object: nil)
+                            }
+                        }
+                })
             }
         }
-
-        
-        for cur  in currencies
-        {
-                var kURL = tURL
-                
-                kURL += ("[btc_\(cur.slug)]")
-                println(kURL)
-                
-                  
-                let URLrequest = NSURLRequest(URL: NSURL(string: kURL)!)
-                var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-                var jsonSource: NSData = NSURLConnection.sendSynchronousRequest(URLrequest, returningResponse: response, error: nil)!
-                
-                
-                data = (NSJSONSerialization.JSONObjectWithData(jsonSource, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary)["price"] as NSString
-                
-                println(data.doubleValue)
-            
-                cur.value = (data.doubleValue)
-                valueDictionary[cur.slug] = (data.doubleValue)
-        }
-        
-        println(valueDictionary)   //nslog
     }
     
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-Tc-ild">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
                                 <color key="backgroundColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -52,7 +52,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qz-P1-w6s">
-                                <rect key="frame" x="88" y="63" width="91" height="21"/>
+                                <rect key="frame" x="88" y="49" width="91" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="wpm-mP-6Fk"/>
                                 </constraints>
@@ -61,7 +61,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="right" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="QZc-yg-fKF">
-                                <rect key="frame" x="433" y="59" width="97" height="30"/>
+                                <rect key="frame" x="433" y="45" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="aNT-HW-YXU"/>
                                 </constraints>
@@ -70,7 +70,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="decimalPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KS5-eg-mJj">
-                                <rect key="frame" x="538" y="51" width="46" height="45"/>
+                                <rect key="frame" x="538" y="37" width="46" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="✓">
                                     <color key="titleColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,25 +81,25 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitcoin1" translatesAutoresizingMaskIntoConstraints="NO" id="Xiu-OK-fJw">
-                                <rect key="frame" x="16" y="42" width="64" height="64"/>
+                                <rect key="frame" x="16" y="28" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="epp-9P-K1L"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="7qz-P1-w6s" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="43" id="0gO-f1-HZz"/>
+                            <constraint firstItem="7qz-P1-w6s" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="29" id="0gO-f1-HZz"/>
                             <constraint firstItem="KS5-eg-mJj" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="4lm-UF-3Sx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xiu-OK-fJw" secondAttribute="trailing" constant="504" id="7qC-F1-uhT"/>
                             <constraint firstItem="Xiu-OK-fJw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="8Qu-0U-Orz"/>
-                            <constraint firstItem="ri8-Tc-ild" firstAttribute="top" secondItem="Xiu-OK-fJw" secondAttribute="bottom" constant="8" symbolic="YES" id="DXC-im-Utq"/>
+                            <constraint firstItem="ri8-Tc-ild" firstAttribute="top" secondItem="Xiu-OK-fJw" secondAttribute="bottom" constant="8" id="DXC-im-Utq"/>
                             <constraint firstItem="KS5-eg-mJj" firstAttribute="baseline" secondItem="7qz-P1-w6s" secondAttribute="baseline" constant="4" id="GLM-F3-K46"/>
                             <constraint firstItem="ri8-Tc-ild" firstAttribute="top" secondItem="7qz-P1-w6s" secondAttribute="bottom" constant="30" id="JxX-YK-Do1"/>
                             <constraint firstItem="7qz-P1-w6s" firstAttribute="leading" secondItem="Xiu-OK-fJw" secondAttribute="trailing" constant="8" symbolic="YES" id="UEU-Dm-15n"/>
-                            <constraint firstItem="ri8-Tc-ild" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="94" id="Y5b-I9-Agk"/>
+                            <constraint firstItem="ri8-Tc-ild" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="Y5b-I9-Agk"/>
                             <constraint firstAttribute="trailing" secondItem="ri8-Tc-ild" secondAttribute="trailing" id="a40-bC-kPr"/>
                             <constraint firstItem="QZc-yg-fKF" firstAttribute="centerY" secondItem="Xiu-OK-fJw" secondAttribute="centerY" id="c1o-Z2-zUl"/>
-                            <constraint firstItem="QZc-yg-fKF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="39" id="cvq-ko-3z8"/>
+                            <constraint firstItem="QZc-yg-fKF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="25" id="cvq-ko-3z8"/>
                             <constraint firstItem="QZc-yg-fKF" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="-54" id="e0x-n3-ILc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ri8-Tc-ild" secondAttribute="trailing" constant="-16" id="iCv-48-opu"/>
                             <constraint firstItem="ri8-Tc-ild" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="iz0-Tu-BbT"/>
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="267"/>
+            <point key="canvasLocation" x="-352" y="226"/>
         </scene>
     </scenes>
     <resources>
