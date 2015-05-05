@@ -37,21 +37,21 @@ class valueTable
     
     init()
     {
-        currencies.append(currency(slug: "usd"))
-        currencies.append(currency(slug: "eur"))
-        currencies.append(currency(slug: "gbp"))
+        currencies.append(currency(slug: "usd", format: "%2f"))
+        currencies.append(currency(slug: "eur", format: "%2f"))
+        currencies.append(currency(slug: "gbp", format: "%2f"))
         
         
-        cryptoCurrencies.append(currency(slug: "btc"))
-        cryptoCurrencies.append(currency(slug: "xrp"))
-        cryptoCurrencies.append(currency(slug: "ltc"))
-        cryptoCurrencies.append(currency(slug: "bts"))
-        cryptoCurrencies.append(currency(slug: "xpy"))
-        cryptoCurrencies.append(currency(slug: "str"))
-        cryptoCurrencies.append(currency(slug: "doge"))
-        cryptoCurrencies.append(currency(slug: "maid"))
-        cryptoCurrencies.append(currency(slug: "nxt"))
-        cryptoCurrencies.append(currency(slug: "drk"))
+        cryptoCurrencies.append(currency(slug: "btc", format: "%.4f"))
+        cryptoCurrencies.append(currency(slug: "xrp", format: "%.0f"))
+        cryptoCurrencies.append(currency(slug: "ltc", format: "%.3f"))
+        cryptoCurrencies.append(currency(slug: "bts", format: "%.0f"))
+        cryptoCurrencies.append(currency(slug: "xpy", format: "%.2f"))
+        cryptoCurrencies.append(currency(slug: "str", format: "%.0f"))
+        cryptoCurrencies.append(currency(slug: "doge", format: "%.0f"))
+        cryptoCurrencies.append(currency(slug: "maid", format: "%.1f"))
+        cryptoCurrencies.append(currency(slug: "nxt", format: "%.0f"))
+        cryptoCurrencies.append(currency(slug: "drk", format: "%.3f"))
         assignAttributes()
     }
     
@@ -134,6 +134,7 @@ class valueTable
         {
             curr.name = currencyDictionary[curr.slug]
             curr.image = UIImage(named: curr.name!)
+            curr.format = "%.2f"
         }
         
         for curr in cryptoCurrencies
@@ -141,5 +142,17 @@ class valueTable
             curr.name = currencyDictionary[curr.slug]
             curr.image = UIImage(named: curr.name!)
         }
+        
     }
 }
+
+
+
+
+
+
+
+
+
+
+

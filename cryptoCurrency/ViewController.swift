@@ -45,6 +45,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if Reachability.isConnectedToNetwork()
         {
             self.currTable.getJson()
+            currLabel.text?.lowercaseString
+            // here is the place to fix my buggie
         }
             
         else
@@ -102,9 +104,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let cost = currTable.currencies[indexPath.row].value    //value of the currency
                 {
                     var costt = ((amountField.text as NSString).doubleValue / tempval) * cost //temp rate
-                    cell.currencyAmount.text = String(format: "%.2f", costt)
+                    cell.currencyAmount.text = String(format: currTable.currencies[indexPath.row].format!, costt)
                 }
-                else {cell.currencyAmount.text = "-"}
+                else {cell.currencyAmount.text = "⎯"}
             
             
                 if let im = currTable.currencies[indexPath.row].image
@@ -120,9 +122,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let cost = currTable.cryptoCurrencies[indexPath.row].value
                 {
                     var costt = ((amountField.text as NSString).doubleValue  / tempval) * cost
-                    cell.currencyAmount.text = String(format: "%.4f",costt)
+                    cell.currencyAmount.text = String(format: currTable.cryptoCurrencies[indexPath.row].format!,costt)
                 }
-                else {cell.currencyAmount.text = "-"}
+                else {cell.currencyAmount.text = "⎯"}
             
                 if let im = currTable.cryptoCurrencies[indexPath.row].image
                 {
@@ -167,16 +169,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             currLabel.text = currTable.currencies[indexPath.row].slug.uppercaseString
             curImage.image = UIImage(named: "\(currTable.currencies[indexPath.row].name!)1")
-            tempval = currTable.currencies[indexPath.row].value!
+            
+            if let vall = currTable.currencies[indexPath.row].value
+            {
+               tempval = vall
+            }
             self.tableView.reloadData()
-        
         }
         
         if indexPath.section == 1
         {
             currLabel.text = currTable.cryptoCurrencies[indexPath.row].slug.uppercaseString
             curImage.image = UIImage(named: "\(currTable.cryptoCurrencies[indexPath.row].name!)1")
-            tempval = currTable.cryptoCurrencies[indexPath.row].value!
+            
+            if let vall = currTable.cryptoCurrencies[indexPath.row].value
+            {
+                tempval = vall
+            }
             self.tableView.reloadData()
 
         }
