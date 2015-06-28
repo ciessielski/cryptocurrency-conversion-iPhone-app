@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="hRl-lK-z60" customClass="currencyTbC" customModule="cryptoCurrency" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="hRl-lK-z60" customClass="CurrencyTbC" customModule="cryptoCurrency" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hRl-lK-z60" id="ApN-o5-bGI">
@@ -23,18 +23,6 @@
                         <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMf-lh-Gcc">
-                        <rect key="frame" x="8" y="11" width="52" height="51"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="51" id="QYl-Zc-eJ7"/>
-                        </constraints>
-                        <state key="normal">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="currencyButtonPressed:" destination="hRl-lK-z60" eventType="touchUpInside" id="fqf-iS-xnP"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1zw-7z-Kfd">
                         <rect key="frame" x="221" y="27" width="87" height="20"/>
                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
@@ -50,16 +38,12 @@
                 </subviews>
                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="bottom" secondItem="xMf-lh-Gcc" secondAttribute="bottom" id="02a-7y-1eh"/>
                     <constraint firstItem="1zw-7z-Kfd" firstAttribute="bottom" secondItem="pgP-yN-Zpt" secondAttribute="bottom" id="0a2-aA-rz5"/>
                     <constraint firstItem="1zw-7z-Kfd" firstAttribute="trailing" secondItem="ApN-o5-bGI" secondAttribute="trailingMargin" id="2xF-gg-5pY"/>
-                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="top" secondItem="xMf-lh-Gcc" secondAttribute="top" id="6cP-0e-iyo"/>
                     <constraint firstItem="pgP-yN-Zpt" firstAttribute="leading" secondItem="HCp-Yx-7LD" secondAttribute="trailing" constant="8" symbolic="YES" id="6qs-ui-G8k"/>
                     <constraint firstItem="HCp-Yx-7LD" firstAttribute="leading" secondItem="ApN-o5-bGI" secondAttribute="leadingMargin" id="6sk-44-d4Z"/>
-                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="leading" secondItem="xMf-lh-Gcc" secondAttribute="leading" id="8c2-iZ-dcu"/>
                     <constraint firstAttribute="trailingMargin" secondItem="1zw-7z-Kfd" secondAttribute="trailing" constant="4" id="HiV-IY-dnf"/>
                     <constraint firstAttribute="bottomMargin" secondItem="HCp-Yx-7LD" secondAttribute="bottom" constant="1" id="Jv8-K1-k5k"/>
-                    <constraint firstItem="HCp-Yx-7LD" firstAttribute="trailing" secondItem="xMf-lh-Gcc" secondAttribute="trailing" id="KgZ-Ep-WKT"/>
                     <constraint firstItem="HCp-Yx-7LD" firstAttribute="centerY" secondItem="pgP-yN-Zpt" secondAttribute="centerY" id="LTr-Fl-sDM"/>
                     <constraint firstItem="1zw-7z-Kfd" firstAttribute="leading" secondItem="pgP-yN-Zpt" secondAttribute="trailing" constant="89" id="TBH-dB-9ME"/>
                     <constraint firstItem="HCp-Yx-7LD" firstAttribute="top" secondItem="ApN-o5-bGI" secondAttribute="topMargin" constant="3" id="pT9-BK-W3A"/>

@@ -8,28 +8,17 @@
 
 import UIKit
 
-class currencyTbC: UITableViewCell {
-
-    
+class CurrencyTbC: UITableViewCell {
 
     @IBOutlet weak var currencyShort: UILabel!
     @IBOutlet weak var currencyAmount: UILabel!
     @IBOutlet weak var currencyImage: UIImageView!
     
-    @IBAction func currencyButtonPressed(sender: AnyObject)
-    
-    {
-        println("button pressed")
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(selected: Bool, animated: Bool)
-    {
+    override func setSelected(selected: Bool, animated: Bool){
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
-
 }
