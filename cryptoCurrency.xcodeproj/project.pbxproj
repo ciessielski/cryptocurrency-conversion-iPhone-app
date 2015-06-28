@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F0BD4481A99269700B2CAA1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0BD4471A99269700B2CAA1 /* Reachability.swift */; };
-		9F9CCCB71A7DBB1100BF4977 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CCCB61A7DBB1100BF4977 /* HeaderCell.swift */; };
 		9FFE6DD11A7D0B66002A6CBF /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFE6DD01A7D0B66002A6CBF /* CurrencyViewController.swift */; };
 		9FFE6DD41A7D0B66002A6CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFE6DD21A7D0B66002A6CBF /* Main.storyboard */; };
 		9FFE6DD61A7D0B66002A6CBF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFE6DD51A7D0B66002A6CBF /* Images.xcassets */; };
@@ -20,6 +19,7 @@
 		EE2D09AF1B402D680025B95A /* ValueTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D09AE1B402D680025B95A /* ValueTable.swift */; };
 		EE2D09B11B402D6B0025B95A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D09B01B402D6B0025B95A /* Currency.swift */; };
 		EE2D09B31B402DC00025B95A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE2D09B21B402DC00025B95A /* Info.plist */; };
+		EEB12D921B408EEE00AE9187 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB12D911B408EEE00AE9187 /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		9F0BD4471A99269700B2CAA1 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		9F9CCCB61A7DBB1100BF4977 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCell.swift; path = ../HeaderCell.swift; sourceTree = "<group>"; };
 		9FFE6DC91A7D0B65002A6CBF /* cryptoCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFE6DD01A7D0B66002A6CBF /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		9FFE6DD31A7D0B66002A6CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		EE2D09AE1B402D680025B95A /* ValueTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueTable.swift; path = Model/ValueTable.swift; sourceTree = "<group>"; };
 		EE2D09B01B402D6B0025B95A /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Model/Currency.swift; sourceTree = "<group>"; };
 		EE2D09B21B402DC00025B95A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEB12D911B408EEE00AE9187 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCell.swift; path = Cell/HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				EE2D09AC1B402D500025B95A /* CurrencyTbC.swift */,
+				EEB12D911B408EEE00AE9187 /* HeaderCell.swift */,
 				EE2D09AA1B402D470025B95A /* CurrencyCell.xib */,
-				9F9CCCB61A7DBB1100BF4977 /* HeaderCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 				9FFE6DD11A7D0B66002A6CBF /* CurrencyViewController.swift in Sources */,
 				EE2D09A91B402D310025B95A /* AppDelegate.swift in Sources */,
 				EE2D09B11B402D6B0025B95A /* Currency.swift in Sources */,
-				9F9CCCB71A7DBB1100BF4977 /* HeaderCell.swift in Sources */,
+				EEB12D921B408EEE00AE9187 /* HeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
