@@ -217,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9FFE6DC41A7D0B65002A6CBF /* Build configuration list for PBXProject "CryptoCurrency" */;
+			buildConfigurationList = 9FFE6DC41A7D0B65002A6CBF /* Build configuration list for PBXProject "cryptoCurrency" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -392,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = launch;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = cryptoCurrency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -404,6 +405,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = launch;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = cryptoCurrency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -449,7 +451,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9FFE6DC41A7D0B65002A6CBF /* Build configuration list for PBXProject "CryptoCurrency" */ = {
+		9FFE6DC41A7D0B65002A6CBF /* Build configuration list for PBXProject "cryptoCurrency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FFE6DE61A7D0B66002A6CBF /* Debug */,
